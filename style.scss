@@ -1,0 +1,66 @@
+$primary-color: #0000fd;
+$secondary-color: #f30810;
+
+@mixin dual-gradient-background($color1, $color2) {
+    background: linear-gradient(to right, $color1, $color2);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    @include dual-gradient-background($primary-color, $secondary-color);
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    color: $primary-color;
+    text-align: center;
+}
+
+.input-section {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    padding: 8px 20px;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($primary-color, 10%);
+    }
+}
+
+.summary-section {
+    margin-top: 20px;
+
+    h2 {
+        color: $primary-color;
+        margin-bottom: 10px;
+    }
+}
